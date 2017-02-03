@@ -1,0 +1,10 @@
+version: '2'
+services:
+  web:
+    image: ubuntu:latest
+    volumes:
+      - ./src/app:/usr/src/app
+    working_dir: /usr/src/app
+    # command: scripts/setup
+    # ports:
+    #   - "80:8000"

@@ -1,0 +1,22 @@
+{
+  "name": "artisankitchenandbath",
+  "description": "artisankitchenandbath.ca",
+  "main": "",
+  "authors": [
+    "plansmash@me.com"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/shawnthompson/artisankitchenandbath",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+  }
+}

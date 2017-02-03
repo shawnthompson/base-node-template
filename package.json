@@ -1,0 +1,28 @@
+{
+  "name": "artisankitchenandbath",
+  "version": "1.0.0",
+  "description": "artisankitchenandbath.ca",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnthompson/artisankitchenandbath.git"
+  },
+  "author": "plansmash@me.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shawnthompson/artisankitchenandbath/issues"
+  },
+  "homepage": "https://shawnthompson.github.io/artisankitchenandbath",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-gh-pages": "^1.1.0",
+    "grunt-responsive-images": "^0.1.7",
+    "grunt-sass": "^1.1.0",
+    "load-grunt-tasks": "^3.5.0"
+  }
+}
