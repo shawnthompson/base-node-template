@@ -40,18 +40,26 @@ module.exports = function(grunt) {
 				src: ['**/*'],
 				dest: './builds/development/bootstrap/'
 			},
-			pages: {
-				expand: true,
-				cwd: 'components/pages/',
-				src:['**/*'],
-				dest: './builds/development/'
-			},
 			js: {
 				expand: true,
 				cwd: 'components/scripts/',
 				src: ['**/*'],
 				dest: 'builds/development/js/'
 			}
+		},
+
+		assemble: {
+		  options: {
+		    assets: 'assets',
+		    plugins: ['permalinks'],
+		    partials: ['components/includes/**/*.hbs'],
+		    layout: ['components/layouts/default.hbs'],
+		    data: ['components/data/*.{json,yml}']
+		  },
+		  site: {
+		    src: ['./components/pages/*.hbs'],
+		    dest: './builds/development/'
+		  }
 		},
 
 		sass : {
@@ -125,6 +133,7 @@ module.exports = function(grunt) {
 	grunt.registerTask(
 		'default', [
 			'copy',
+			'assemble',
 			'concat',
 			'uglify',
 			'sass',
