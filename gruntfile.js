@@ -56,12 +56,15 @@ module.exports = function(grunt) {
 		    assets: 'assets',
 		    plugins: ['permalinks'],
 		    partials: ['components/includes/**/*.hbs'],
-		    layout: ['components/layouts/default.hbs'],
+				layoutdir: 'components/layouts',
+		    layout: ['default.hbs'],
 		    data: ['components/data/*.{json,yml}']
 		  },
 		  site: {
-		    src: ['./components/pages/*.hbs'],
-		    dest: 'builds/development'
+				expand: true,
+				cwd: './components/pages/',
+		    src: ['*.hbs'],
+		    dest: './builds/development/'
 		  }
 		},
 
