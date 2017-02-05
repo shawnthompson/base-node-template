@@ -8,11 +8,14 @@ module.exports = function(grunt) {
 			install : {}
 		},
 
+		clean: ['builds'],
+
 		concat : {
 			options : {
 				seperator: '\n\n//--------------------------------\n',
 				banner: '\n\n//--------------------------------\n'
 			},
+
 			dist : {
 				src : [
 					'./bower_components/jquery/dist/jquery.js',
@@ -58,7 +61,7 @@ module.exports = function(grunt) {
 		  },
 		  site: {
 		    src: ['./components/pages/*.hbs'],
-		    dest: './builds/development/'
+		    dest: 'builds/development'
 		  }
 		},
 
@@ -132,6 +135,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask(
 		'default', [
+			'clean',
 			'copy',
 			'assemble',
 			'concat',
