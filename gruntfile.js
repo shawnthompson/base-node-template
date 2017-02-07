@@ -10,13 +10,26 @@ module.exports = function(grunt) {
 
 		clean: ['builds'],
 
+		sass : {
+			dist : {
+				options : {
+					style: 'expanded'
+				},
+
+				files : [{
+					src : './components/sass/styles.scss',
+					dest : './components/css/style.css'
+				}]
+			}
+		},
+
 		concat : {
 			options : {
 				seperator: '\n\n//--------------------------------\n',
 				banner: '\n\n//--------------------------------\n'
 			},
 
-			dist : {
+			js : {
 				src : [
 					'./bower_components/jquery/dist/jquery.js',
 					'./bower_components/bootstrap/dist/js/bootstrap.js',
@@ -60,25 +73,13 @@ module.exports = function(grunt) {
 		    layout: ['default.hbs'],
 		    data: ['components/data/*.{json,yml}']
 		  },
+
 		  site: {
 				expand: true,
 				cwd: './components/pages/',
 		    src: ['*.hbs'],
 		    dest: './builds/development/'
 		  }
-		},
-
-		sass : {
-			dist : {
-				options : {
-					style: 'expanded'
-				},
-
-				files : [{
-					src : './components/sass/styles.scss',
-					dest : './builds/development/css/style.css'
-				}]
-			}
 		},
 
 		cssmin : {
