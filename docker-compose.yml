@@ -1,10 +1,10 @@
-version: '2'
+---
+version: "2"
+
 services:
-  web:
-    image: ubuntu:latest
+  apache:
+    image: 'httpd:alpine'
+    ports:
+      - '8888:80'
     volumes:
-      - ./src/app:/usr/src/app
-    working_dir: /usr/src/app
-    # command: scripts/setup
-    # ports:
-    #   - "80:8000"
+      - './builds/development:/usr/local/apache2/htdocs'
