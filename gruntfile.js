@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 
 				files : [{
 					src : './components/sass/styles.scss',
-					dest : './builds/development/css/style.css'
+					dest : './components/css/style.css'
 				}]
 			}
 		},
@@ -36,6 +36,13 @@ module.exports = function(grunt) {
 					'./components/scripts/*.js'
 					],
 				dest : './builds/development/js/scripts.js'
+			},
+			css : {
+				src : [
+					'./bower_components/bootstrap/dist/css/bootstrap.css',
+					'./components/css/style.css'
+					],
+				dest : './builds/development/css/style.css'
 			}
 		},
 
@@ -50,17 +57,11 @@ module.exports = function(grunt) {
 		},
 
 		copy: {
-			main: {
+			fonts: {
 				expand: true,
-				cwd: './bower_components/bootstrap/dist/',
-				src: ['**/*'],
-				dest: './builds/development/bootstrap/'
-			},
-			js: {
-				expand: true,
-				cwd: 'components/scripts/',
-				src: ['**/*'],
-				dest: 'builds/development/js/'
+				cwd : './bower_components/bootstrap/dist/fonts/',
+				src: ['*.*'],
+				dest: './builds/development/fonts/'
 			}
 		},
 
@@ -82,17 +83,17 @@ module.exports = function(grunt) {
 		  }
 		},
 
-		cssmin : {
-			target : {
-				files : [{
-					expand : true,
-					cwd : './builds/development/css/',
-					src : ['*.css', '!*.min.css'],
-					dest : './builds/development/css/',
-					ext : '.min.css'
-				}]
-			}
-		},
+		// cssmin : {
+		// 	target : {
+		// 		files : [{
+		// 			expand : true,
+		// 			cwd : './builds/development/css/',
+		// 			src : ['*.css', '!*.min.css'],
+		// 			dest : './builds/development/css/',
+		// 			ext : '.min.css'
+		// 		}]
+		// 	}
+		// },
 
 		responsive_images: {
 			myTask: {
@@ -140,12 +141,12 @@ module.exports = function(grunt) {
 	grunt.registerTask(
 		'default', [
 			'clean',
+			'sass',
 			'copy',
 			'assemble',
 			'concat',
-			'uglify',
-			'sass',
+			'uglify'
 			// 'responsive_images',
-			'cssmin'
+			// 'cssmin'
 	]);
 };
