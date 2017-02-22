@@ -1,5 +1,5 @@
 {
-  "name": "Plansmash base node template",
+  "name": "base-node-template",
   "version": "1.0.0",
   "description": "Website template using nodejs and assemble",
   "repository": {
