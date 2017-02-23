@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
 				files : [{
 					src : './components/sass/styles.scss',
-					dest : './components/css/style.css'
+					dest : './builds/development/css/style.css'
 				}]
 			}
 		},
@@ -35,8 +35,7 @@ module.exports = function(grunt) {
 			},
 			css : {
 				src : [
-					'./node_modules/bootstrap/dist/css/bootstrap.css',
-					'./components/css/style.css'
+					'./node_modules/bootstrap/dist/css/bootstrap.css'
 					],
 				dest : './builds/development/css/style.css'
 			}
